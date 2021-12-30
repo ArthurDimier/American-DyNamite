@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/wagons/Wagon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scripts/WagonADNPolymérase.gd" type="Script" id=2]
+[ext_resource path="res://res/PNG/PNG Wagons lesions/ADNPolymérase.png" type="Texture" id=3]
+
+[node name="Wagon" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+wagon_damage = 1
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[connection signal="hit_lesion" from="." to="." method="_on_Wagon_hit_lesion"]

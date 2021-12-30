@@ -1,0 +1,74 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "PathFollow2D",
+"class": "Locomotive",
+"language": "GDScript",
+"path": "res://src/scripts/Locomotive.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Wagon",
+"language": "GDScript",
+"path": "res://src/scripts/Wagon.gd"
+} ]
+_global_script_class_icons={
+"Locomotive": "",
+"Wagon": ""
+}
+
+[application]
+
+config/name="Fdjv Trains And Lesions"
+run/main_scene="res://src/scenes/SplashScreen.tscn"
+config/icon="res://res/PNG/banditAvant.png"
+
+[autoload]
+
+PauseScript="*res://src/scripts/Autoload/PauseScript.gd"
+
+[display]
+
+window/size/width=2048
+window/size/height=1200
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[input]
+
+ui_end={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Train parts"
+2d_physics/layer_2="Lesions"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

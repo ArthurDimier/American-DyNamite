@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/scripts/SplashScreen.gd" type="Script" id=1]
+[ext_resource path="res://BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://src/scenes/Tutorial.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 0.841919, 0.421875, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1
+
+[sub_resource type="DynamicFont" id=3]
+size = 47
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 47
+font_data = ExtResource( 2 )
+
+[node name="SplashScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="newGame" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -167.0
+margin_top = -44.5
+margin_right = 167.0
+margin_bottom = 44.5
+custom_fonts/font = SubResource( 3 )
+text = "Nouvelle partie"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.497
+anchor_top = 0.159
+anchor_right = 0.497
+anchor_bottom = 0.159
+margin_left = -476.591
+margin_top = 0.0185242
+margin_right = 475.409
+margin_bottom = 180.019
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "American DyNamite"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TutorialButton" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -167.318
+margin_top = 91.2252
+margin_right = 170.682
+margin_bottom = 181.225
+custom_fonts/font = SubResource( 5 )
+text = "Tutorial"
+
+[node name="Tutorial" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[connection signal="pressed" from="newGame" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="TutorialButton" to="." method="_on_TutorialButton_pressed"]

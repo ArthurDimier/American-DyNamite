@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/Lesion.tscn" type="PackedScene" id=1]
+[ext_resource path="res://res/PNG/Lesions PNG/DVerte.png" type="Texture" id=2]
+
+[node name="Lesion" instance=ExtResource( 1 )]
+gradient = ExtResource( 2 )
+life_layers = [ 3, 2, 1, 0 ]

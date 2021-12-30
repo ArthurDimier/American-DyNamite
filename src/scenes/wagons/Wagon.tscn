@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://res/PNG/PNG Wagons lesions/ADNLigase.png" type="Texture" id=1]
+[ext_resource path="res://src/scripts/Wagon.gd" type="Script" id=2]
+[ext_resource path="res://src/scripts/Shaders/Wobble.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/angle = 0.2
+shader_param/speed = 0.0
+shader_param/scale = 1.0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.5808, 9.6986 )
+
+[node name="Wagon" type="KinematicBody2D" groups=["wagon"]]
+rotation = 6.28319
+scale = Vector2( 5, 5 )
+input_pickable = true
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+scale = Vector2( 0.02, 0.02 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="FrontAttach" type="Position2D" parent="."]
+position = Vector2( 22.8093, 2.94314 )
+
+[node name="BackAttach" type="Position2D" parent="."]
+position = Vector2( -22.1786, 2.94314 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+cast_to = Vector2( 0, 25 )
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -22, -10, 45, 20 )
+
+[connection signal="input_event" from="." to="." method="_on_Wagon_input_event"]

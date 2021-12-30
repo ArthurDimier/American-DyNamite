@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://BebasNeue-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 35
+font_data = ExtResource( 2 )
+
+[node name="Tutorial" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -890.5
+margin_top = -517.0
+margin_right = 890.5
+margin_bottom = 517.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "																			Bienvenue dans American DyNamite !
+
+
+
+Votre mission est de maintenir les deux brins d’ADN en bon état le plus longtemps possible. Ces derniers sont symbolisés par les 2 rails et seront attaqués par des bandits. De nombreuses lésions vont alors apparaître et vous devrez trouver la bonne combinaison de wagon à assembler pour réparer chacune d'entre elles. 
+
+Vous disposerez de 8 wagons de couleurs différentes qui apparaîtront aléatoirement en fonction de la période indiquée par l’horloge de vie cellulaire. Vous devez prendre les wagons et les relâcher au-dessus de la station puis lancer le train grâce au bouton situé à côté de la station. Attention, le nombre ainsi que l’ordre des wagons sont importants pour réparer les lésions. Le nombre de lésions réparées diminuera vos chances de perdre. La légende placée en haut à droite de l’écran peut vous aider à reconnaître les lésions et les différents wagons.
+
+																							Bonne chance à vous ! 
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetourMenu" type="Button" parent="."]
+margin_left = 36.0
+margin_top = 1094.0
+margin_right = 228.0
+margin_bottom = 1166.0
+custom_fonts/font = SubResource( 3 )
+text = "Retour"
+__meta__ = {
+"_edit_use_anchors_": false
+}

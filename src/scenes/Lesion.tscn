@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scripts/Lesion.gd" type="Script" id=1]
+[ext_resource path="res://res/PNG/Lesions PNG/DNoire.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Damage"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true ]
+}
+
+[node name="Lesion" type="Area2D" groups=["lesion"]]
+position = Vector2( 772.439, 552.199 )
+scale = Vector2( 3, 3 )
+collision_layer = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.015, 0.015 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Damage = SubResource( 4 )

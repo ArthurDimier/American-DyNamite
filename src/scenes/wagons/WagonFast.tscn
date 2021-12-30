@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scenes/wagons/Wagon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://res/PNG/wagonRéparationRapide.png" type="Texture" id=2]
+
+[node name="Wagon" instance=ExtResource( 1 )]
+collision_layer = 0
+collision_mask = 0
+input_pickable = false
+anim = false
+wagon_damage = 7
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 5.02451, 0.714314 )
+
+[node name="FrontAttach" parent="." index="2"]
+position = Vector2( 22.8093, 2.38191 )
+
+[node name="BackAttach" parent="." index="3"]
+position = Vector2( -12.8403, 2.37741 )
